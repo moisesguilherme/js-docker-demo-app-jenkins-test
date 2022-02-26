@@ -1,16 +1,19 @@
 pipeline {    
     agent any
+    def tag = "latest"
     stages {
         stage('test') {
+           agent{
+                docker { image 'node:16.13.1-alpine' } 
+            }
+        
             steps {
+                echo 'teste tag:' +  tag
                 sh 'node --version'
             }
         }
         
         stage('build') {
-            agent{
-                docker { image 'node:16.13.1-alpine' } 
-            }
             steps {
                 echo 'building the application...'
                 sh 'cd app'
