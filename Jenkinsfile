@@ -1,6 +1,6 @@
 pipeline {    
     agent any
-    def tag = "latest"
+    
     stages {
         stage('test') {
            agent{
@@ -8,7 +8,7 @@ pipeline {
             }
         
             steps {
-                echo 'teste tag:' +  tag
+                echo 'teste'
                 sh 'node --version'
             }
         }
