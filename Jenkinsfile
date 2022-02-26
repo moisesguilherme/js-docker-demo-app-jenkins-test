@@ -1,9 +1,5 @@
-pipeline {
-    
-    agent {
-        docker { image 'node:16.13.1-alpine' }
-    }
-    
+pipeline {    
+    agent any
     stages {
         stage('test') {
             steps {
@@ -12,7 +8,9 @@ pipeline {
         }
         
         stage('build') {
-        
+            agent{
+                docker { image 'node:16.13.1-alpine' } 
+            }
             steps {
                 echo 'building the application...'
                 sh 'cd app'
