@@ -13,7 +13,7 @@ pipeline {
         stage('run backend') {
             steps {
               echo 'executing gradle...'
-              gradle('Gradle-7.3') {
+              withGradle() {
                  sh './gradlew -v'
               }
          }
