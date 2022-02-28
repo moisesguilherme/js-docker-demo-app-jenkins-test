@@ -1,5 +1,4 @@
 CODE_CHANGES = getGitChanges()
-
 pipeline {    
     agent any
     
@@ -32,24 +31,6 @@ pipeline {
             steps {
                 echo 'deplying the applicaiton...'
             }
-        }
-        
+        }       
      }
-    post {
-        always {
-            steps {
-                echo 'always test...'
-            }
-        }
-        success{
-            steps {
-                echo 'success test...'
-            }
-        }
-        failure{
-            steps {
-                echo 'failure test...'
-            }
-        }
-    }
 }
