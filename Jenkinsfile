@@ -37,13 +37,19 @@ pipeline {
      }
     post {
         always {
-            // 
+            steps {
+                echo 'always test...'
+            }
         }
         success{
-            //
+            steps {
+                echo 'success test...'
+            }
         }
         failure{
-            //
+            steps {
+                echo 'failure test...'
+            }
         }
     }
 }
