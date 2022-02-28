@@ -1,7 +1,7 @@
 pipeline {    
     agent any
     tools {
-        gralde 'Gradle-7.3'
+        gradle 'Gradle-7.3'
     }
     
     stages {
