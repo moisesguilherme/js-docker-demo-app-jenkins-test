@@ -9,6 +9,7 @@ pipeline {
                   sh 'yarn install'
                 }
            }
+        }
         stage('run backend') {
             steps {
               echo 'executing gradle...'
@@ -17,4 +18,5 @@ pipeline {
               }
          }
       }
+  }
 }
