@@ -1,3 +1,5 @@
+def gv
+
 pipeline {    
     agent any
     parameters {
@@ -14,10 +16,22 @@ pipeline {
        gradle "Gradle-7.3"
     }*/
     stages {
+        stage('int') {            
+            steps {
+                script {
+                   gv = load 'script.groovy'
+                }
+            }
+        }
+
         stage('build') {            
             steps {
-                echo 'building the application...'
-                echo "building version ${NEW_VERSION}"
+               script {
+                    //groovy code
+                    gv.buildApp()
+                }
+                //echo 'building the application...'
+                //echo "building version ${NEW_VERSION}"
                 //sh "mvn install"
             }
         }
@@ -29,14 +43,21 @@ pipeline {
                }
            }
            steps {
-                echo 'testing the applicaiont...'
+               script {
+                    gv.testAppApp()
+                }
+                //echo 'testing the applicaiont...'
             }
         }
       
       stage('deploy') {
             steps {
-                echo 'deploying the applicaiton...'
-                echo "deploying version ${params.VERSION}"
+                script {
+                    //groovy code
+                    gv.deployApp()
+                }
+                //echo 'deploying the applicaiton...'
+                //echo "deploying version ${params.VERSION}"
                 //echo "deploying with ${SERVER_CREDENTIALS}"
                 //sh  "${SERVER_CREDENTIALS}"
                 /*withCredentials([
