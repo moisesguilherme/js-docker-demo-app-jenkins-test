@@ -44,7 +44,7 @@ pipeline {
            }
            steps {
                script {
-                    gv.testAppApp()
+                    gv.testApp()
                 }
                 //echo 'testing the applicaiont...'
             }
