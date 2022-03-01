@@ -9,10 +9,10 @@ pipeline {
         NEW_VERSION = '1.3.0'
         SERVER_CREDENTIALS = credentials('server-credentials')
     }
-    tools {
-       //maven "Maven"
-       //gradle "Gradle-7.3"
-    }
+    /*tools {
+       maven "Maven"
+       gradle "Gradle-7.3"
+    }*/
     stages {
         stage('build') {            
             steps {
