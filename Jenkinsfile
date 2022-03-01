@@ -24,9 +24,9 @@ pipeline {
                 //echo "deploying with ${SERVER_CREDENTIALS}"
                 //sh  "${SERVER_CREDENTIALS}"
                 withCredentials([
-                    usernamePassword(credentials: 'server-credentials', usernameVariable: USER, passwordVariable: PWD)
+                    usernamePassword(credentialsId: 'server-credentials', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')
                 ]) {
-                    sh "echo some script ${USER} ${PWD}"
+                    sh "echo some script ${USERNAME} ${PASSWORD}"
                 }
             }
         }       
