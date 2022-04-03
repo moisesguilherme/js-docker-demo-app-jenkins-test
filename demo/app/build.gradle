@@ -37,7 +37,7 @@ tasks.named('test') {
 
 sonarqube {
     properties {
-        property "sonar.host.url", "http://18.229.107.86:9000"
-        property "sonar.login", "255cdbb35f7d978c46a2285260b2f7f092f1053d"
+	    property "sonar.host.url", System.getenv("SONAR_URL_KEY")
+        property "sonar.login", System.getenv("SONAR_LOGIN_KEY")
     }
 }
