@@ -1,4 +1,4 @@
-pipeline {    
+pipeline {
     agent any
     stages {
 
@@ -24,15 +24,12 @@ pipeline {
                 '''
              }
           }
-        } 
+        }
 
         stage('Quality gate') {
           steps{
             waitForQualityGate abortPipeline: true
-          }          
-        }      
-        
+          }
+        }
     }
 }
-
-    
